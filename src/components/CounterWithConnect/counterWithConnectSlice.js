@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Reducer
-export const counterWithHookSlice = createSlice({
-    name: 'counterWithHook',
+export const counterWithConnectSlice = createSlice({
+    name: 'counterWithConnect',
     initialState: {
         value: 0,
     },
@@ -25,7 +25,7 @@ export const counterWithHookSlice = createSlice({
 });
 
 // Actions
-export const { increment, decrement, incrementByAmount } = counterWithHookSlice.actions;
+export const { increment, decrement, incrementByAmount } = counterWithConnectSlice.actions;
 
 // Thunks
 export const incrementAsync = amount => dispatch => {
@@ -35,6 +35,6 @@ export const incrementAsync = amount => dispatch => {
 };
 
 // Selectors (For compose selectors use "createSelector" from library "reselect")
-export const selectCount = state => state.counterWithHook.value;
+export const selectCount = state => state.counterWithConnect.value;
 
-export default counterWithHookSlice.reducer;
+export default counterWithConnectSlice.reducer;

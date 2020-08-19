@@ -18,7 +18,8 @@ export default function CounterWithHook() {
     return (
         <div className="counter-with-hook">
             <div>
-                <h1>{count}</h1>
+                <h1>Counter with hook</h1>
+                <h2>{count}</h2>
 
                 <button
                     onClick={() => dispatch(decrement())}

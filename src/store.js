@@ -1,14 +1,21 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import counterWithHookSlice from '../src/components/CounterWithHook/counterWithHookSlice';
+import counterWithConnectSlice from '../src/components/CounterWithConnect/counterWithConnectSlice';
 
-export default configureStore({
-    reducer: {
-        counterWithHook: counterWithHookSlice,
-    },
+const reducer = {
+    counterWithHook: counterWithHookSlice,
+    counterWithConnect: counterWithConnectSlice,
+}
+
+const store = configureStore({
+    reducer,
+    // customMiddlewareHere,
 });
 
+export default store;
+
 /**
- * state = {
+ * globalState = {
  *    counterWithHook: {
  *        value,
  *    },
