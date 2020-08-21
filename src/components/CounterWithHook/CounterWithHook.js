@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     decrement,
@@ -10,7 +10,7 @@ import {
 
 import './counter-with-hook.css';
 
-export default function CounterWithHook() {
+export default memo(function CounterWithHook() {
     const count = useSelector(selectCount);
     const dispatch = useDispatch();
     const [incrementAmount, setIncrementAmount] = useState('2');
@@ -54,4 +54,4 @@ export default function CounterWithHook() {
             </div>
         </div>
     );
-}
+});
